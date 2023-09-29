@@ -36,13 +36,13 @@
   <p id="module-pipable"><span id="pipable-py"></span>Pipable: A Python package for connecting to a remote PostgreSQL server, generating and executing the natural langauge based data 
 search queries which are mapped to SQL queries using a using the pipLLM.</p>
 <p>This module provides classes and functions for connecting to a PostgreSQL database and using a language model to generate SQL queries.</p>
-<p>Author: Your Name</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pipable.Pipable">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pipable.</span></span><span class="sig-name descname"><span class="pre">Pipable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">postgres_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="postgresql_connector.html#core.postgresql_connector.PostgresConfig" title="core.postgresql_connector.PostgresConfig"><span class="pre">PostgresConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm_api_base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pipable.Pipable" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A class for connecting to a remote PostgreSQL server and generating SQL queries.</p>
-<p>This class provides methods for establishing a connection to a remote PostgreSQL server and using a language model to generate SQL queries.</p>
+<p>A class for connecting to a remote PostgreSQL server and executing SQL queries using llm.</p>
+<p>This class provides methods for establishing a connection to a remote PostgreSQL server
+and using a language model to generate SQL queries.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pipable.Pipable.ask">
 <span class="sig-name descname"><span class="pre">ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pipable.Pipable.ask" title="Link to this definition"></a></dt>
@@ -76,11 +76,6 @@ question (str, optional): The query to perform in simple English.</p>
 <p>This method closes the connection to the remote PostgreSQL server.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="pipable.Pipable.retrieve_all_tables">
-<span class="sig-name descname"><span class="pre">retrieve_all_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipable.Pipable.retrieve_all_tables" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 
@@ -107,12 +102,12 @@ question (str, optional): The query to perform in simple English.</p>
 <li class="toctree-l2"><a class="reference internal" href="#pipable.Pipable.ask"><code class="docutils literal notranslate"><span class="pre">Pipable.ask()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pipable.Pipable.connect"><code class="docutils literal notranslate"><span class="pre">Pipable.connect()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pipable.Pipable.disconnect"><code class="docutils literal notranslate"><span class="pre">Pipable.disconnect()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pipable.Pipable.retrieve_all_tables"><code class="docutils literal notranslate"><span class="pre">Pipable.retrieve_all_tables()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html"><code class="docutils literal notranslate"><span class="pre">PostgresConfig</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html#core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="llm_client_pipllm.html"><code class="docutils literal notranslate"><span class="pre">PipLlmApiClient</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="logger.html"><code class="docutils literal notranslate"><span class="pre">dev_logger()</span></code></a></li>
 </ul>
 
 <div class="relations">
