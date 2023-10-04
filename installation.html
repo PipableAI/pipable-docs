@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Pipable 1.0.0 documentation</title>
+    <title>Installation &#8212; Pipable 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
     <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -15,7 +15,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="pipllm_api_client.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Indices and tables" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,30 +33,20 @@
 
           <div class="body" role="main">
             
-  <dl class="py function" id="module-pipable.core.dev_logger">
-<dt class="sig sig-object py" id="pipable.core.dev_logger.dev_logger">
-<span class="sig-prename descclassname"><span class="pre">pipable.core.dev_logger.</span></span><span class="sig-name descname"><span class="pre">dev_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Logger</span></span></span><a class="headerlink" href="#pipable.core.dev_logger.dev_logger" title="Link to this definition"></a></dt>
-<dd><p>Configures and returns a logger for development purposes.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>log_file_path (str, optional): Path to the log file.</dt><dd><p>If provided, logs will be saved to this file. Defaults to None.</p>
-</dd>
-</dl>
-</dd>
-<dt>Returns:</dt><dd><p>logging.Logger: Configured logger object.</p>
-</dd>
-</dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example usage:</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">dev_logger</span><span class="p">(</span><span class="s2">&quot;example.log&quot;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message.&quot;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message.&quot;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message.&quot;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message.&quot;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;This is a critical message.&quot;</span><span class="p">)</span>
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<p>To install Pipable, you can use <cite>pip</cite>, Python’s package manager. Open your terminal or command prompt and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>pipable
 </pre></div>
 </div>
-</dd></dl>
-
+<p>This will download and install the latest version of Pipable and its dependencies.</p>
+<p><strong>Note:</strong> Pipable requires Python 3.6 or higher.</p>
+<p>If you prefer to install Pipable from source, you can clone the GitHub repository and install it using <cite>setup.py</cite>. Navigate to the project directory and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>setup.py<span class="w"> </span>install
+</pre></div>
+</div>
+<p>This will install Pipable locally on your system.</p>
+</section>
 
 
           </div>
@@ -76,7 +67,7 @@
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipable.html"><code class="docutils literal notranslate"><span class="pre">Pipable</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="database_connector_interface.html"><code class="docutils literal notranslate"><span class="pre">DatabaseConnectorInterface</span></code></a></li>
@@ -84,14 +75,15 @@
 <li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html"><code class="docutils literal notranslate"><span class="pre">PostgresConfig</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html#pipable.core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipllm_api_client.html"><code class="docutils literal notranslate"><span class="pre">PipLlmApiClient</span></code></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">dev_logger()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="logger.html"><code class="docutils literal notranslate"><span class="pre">dev_logger()</span></code></a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="pipllm_api_client.html" title="previous chapter">&lt;no title&gt;</a></li>
+      <li>Previous: <a href="index.html" title="previous chapter">Indices and tables</a></li>
+      <li>Next: <a href="usage.html" title="next chapter">Usage</a></li>
   </ul></li>
 </ul>
 </div>
@@ -125,7 +117,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
-      <a href="_sources/logger.rst.txt"
+      <a href="_sources/installation.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

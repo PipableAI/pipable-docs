@@ -15,8 +15,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="llm_client_pipllm.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="pipable.html" />
+    <link rel="next" title="&lt;no title&gt;" href="pipllm_api_client.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="llm_api_client_interface.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -33,104 +33,119 @@
 
           <div class="body" role="main">
             
-  <p id="module-core.postgresql_connector"><span id="postgresql-connector-py"></span>Pipable Connector Module</p>
-<p>This module provides classes and functions for connecting to a remote PostgreSQL server.</p>
+  <dl class="py class" id="module-pipable.core.postgresql_connector">
+<span id="postgresql-connector-py"></span><dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pipable.core.postgresql_connector.</span></span><span class="sig-name descname"><span class="pre">PostgresConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Data class for PostgreSQL connection configuration.</p>
 <dl class="simple">
-<dt>Classes:</dt><dd><ul class="simple">
-<li><p>PostgresConfig: A data class for PostgreSQL connection configuration.</p></li>
-</ul>
+<dt>Args:</dt><dd><p>host (str): The hostname or IP address of the PostgreSQL server.
+port (int): The port number to connect to on the PostgreSQL server.
+database (str): The name of the PostgreSQL database.
+user (str): The username for connecting to the PostgreSQL server.
+password (str): The password for the specified username.</p>
 </dd>
-<dt>Functions:</dt><dd><ul class="simple">
-<li><p>connect_to_postgres: Establish a connection to the PostgreSQL server using a provided configuration.</p></li>
-<li><p>disconnect_from_postgres: Close the connection to the PostgreSQL server.</p></li>
-</ul>
+<dt>Attributes:</dt><dd><p>host (str): The hostname or IP address of the PostgreSQL server.
+port (int): The port number to connect to on the PostgreSQL server.
+database (str): The name of the PostgreSQL database.
+user (str): The username for connecting to the PostgreSQL server.
+password (str): The password for the specified username.</p>
 </dd>
 </dl>
-<p>Author: Pipable</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.postgresql_connector.</span></span><span class="sig-name descname"><span class="pre">PostgresConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.postgresql_connector.PostgresConfig" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConfig.database">
-<span class="sig-name descname"><span class="pre">database</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#core.postgresql_connector.PostgresConfig.database" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConfig.database">
+<span class="sig-name descname"><span class="pre">database</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConfig.database" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConfig.host">
-<span class="sig-name descname"><span class="pre">host</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#core.postgresql_connector.PostgresConfig.host" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConfig.host">
+<span class="sig-name descname"><span class="pre">host</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConfig.host" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConfig.password">
-<span class="sig-name descname"><span class="pre">password</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#core.postgresql_connector.PostgresConfig.password" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConfig.password">
+<span class="sig-name descname"><span class="pre">password</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConfig.password" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConfig.port">
-<span class="sig-name descname"><span class="pre">port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#core.postgresql_connector.PostgresConfig.port" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConfig.port">
+<span class="sig-name descname"><span class="pre">port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConfig.port" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConfig.user">
-<span class="sig-name descname"><span class="pre">user</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#core.postgresql_connector.PostgresConfig.user" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConfig.user">
+<span class="sig-name descname"><span class="pre">user</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConfig.user" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConnector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.postgresql_connector.</span></span><span class="sig-name descname"><span class="pre">PostgresConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#core.postgresql_connector.PostgresConfig" title="core.postgresql_connector.PostgresConfig"><span class="pre">PostgresConfig</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.postgresql_connector.PostgresConnector" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConnector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pipable.core.postgresql_connector.</span></span><span class="sig-name descname"><span class="pre">PostgresConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConfig" title="pipable.core.postgresql_connector.PostgresConfig"><span class="pre">PostgresConfig</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConnector" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="database_connector_interface.html#pipable.interfaces.database_connector_interface.DatabaseConnectorInterface" title="pipable.interfaces.database_connector_interface.DatabaseConnectorInterface"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseConnectorInterface</span></code></a></p>
 <p>A class for establishing and managing the PostgreSQL database connection.</p>
 <p>This class provides methods for connecting to a remote PostgreSQL server and executing SQL queries.
 It uses the <cite>psycopg2</cite> library for database interaction.</p>
 <dl>
 <dt>Args:</dt><dd><p>config (PostgresConfig): The configuration for connecting to the PostgreSQL server.</p>
 </dd>
+<dt>Attributes:</dt><dd><p>config (PostgresConfig): The configuration for connecting to the PostgreSQL server.
+connection (psycopg2.extensions.connection): The connection to the PostgreSQL server.
+cursor (psycopg2.extensions.cursor): The cursor for executing SQL queries.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ConnectionError: If failed to connect to the PostgreSQL server.
+ValueError: If an error occurs during query execution.</p>
+</dd>
+<dt>Note:</dt><dd><p>The <cite>execute_query</cite> method returns the query results as a Pandas DataFrame.</p>
+</dd>
+<dt>Warning:</dt><dd><p>Ensure to disconnect from the database using the <cite>disconnect</cite> method after executing queries
+to release resources.</p>
+</dd>
 <dt>Example:</dt><dd><p>To establish a connection and execute a query, create an instance of <cite>PostgresConnector</cite> and
 call the <cite>execute_query</cite> method.</p>
-<p>Example:
-<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
-from pipable.connector import PostgresConnector, PostgresConfig</p>
-<p># Define PostgreSQL configuration
-postgres_config = PostgresConfig(</p>
-<blockquote>
-<div><p>host=”your_postgres_host”,
-port=5432,  # Replace with your port number
-database=”your_database_name”,
-user=”your_username”,
-password=”your_password”,</p>
-</div></blockquote>
-<p>)</p>
-<p># Initialize the PostgresConnector instance
-connector = PostgresConnector(postgres_config)</p>
-<p># Execute a SQL query
-result = connector.execute_query(“SELECT * FROM Employees”)
-<a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pipable.connector</span> <span class="kn">import</span> <span class="n">PostgresConnector</span><span class="p">,</span> <span class="n">PostgresConfig</span>
+
+<span class="c1"># Define PostgreSQL configuration</span>
+<span class="n">postgres_config</span> <span class="o">=</span> <span class="n">PostgresConfig</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;your_postgres_host&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">5432</span><span class="p">,</span>  <span class="c1"># Replace with your port number</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;your_database_name&quot;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;your_username&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;your_password&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Initialize the PostgresConnector instance</span>
+<span class="n">connector</span> <span class="o">=</span> <span class="n">PostgresConnector</span><span class="p">(</span><span class="n">postgres_config</span><span class="p">)</span>
+
+<span class="c1"># Execute a SQL query</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">connector</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Employees&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConnector.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.postgresql_connector.PostgresConnector.connect" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConnector.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConnector.connect" title="Link to this definition"></a></dt>
+<dd><p>Establish a connection to the PostgreSQL server.</p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConnector.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.postgresql_connector.PostgresConnector.disconnect" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConnector.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConnector.disconnect" title="Link to this definition"></a></dt>
+<dd><p>Close the connection to the PostgreSQL server.</p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core.postgresql_connector.PostgresConnector.execute_query">
-<span class="sig-name descname"><span class="pre">execute_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#core.postgresql_connector.PostgresConnector.execute_query" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipable.core.postgresql_connector.PostgresConnector.execute_query">
+<span class="sig-name descname"><span class="pre">execute_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#pipable.core.postgresql_connector.PostgresConnector.execute_query" title="Link to this definition"></a></dt>
 <dd><p>Execute an SQL query on the connected PostgreSQL server and return the result as
 a Pandas DataFrame.</p>
 <dl class="simple">
-<dt>Args:</dt><dd><p>sql_query (str): The SQL query to execute.</p>
+<dt>Args:</dt><dd><p>query (str): The SQL query to execute.</p>
 </dd>
 <dt>Returns:</dt><dd><p>DataFrame: A Pandas DataFrame representing the query results.</p>
 </dd>
-<dt>Raises:</dt><dd><p>psycopg2.Error: If an error occurs during query execution.</p>
+<dt>Raises:</dt><dd><p>ValueError: If an error occurs during query execution.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -157,22 +172,26 @@ a Pandas DataFrame.</p>
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipable.html"><code class="docutils literal notranslate"><span class="pre">Pipable</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_connector_interface.html"><code class="docutils literal notranslate"><span class="pre">DatabaseConnectorInterface</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="llm_api_client_interface.html"><code class="docutils literal notranslate"><span class="pre">LlmApiClientInterface</span></code></a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">PostgresConfig</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#core.postgresql_connector.PostgresConfig.database"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.database</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#core.postgresql_connector.PostgresConfig.host"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.host</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#core.postgresql_connector.PostgresConfig.password"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.password</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#core.postgresql_connector.PostgresConfig.port"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.port</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#core.postgresql_connector.PostgresConfig.user"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.user</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConfig.database"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.database</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConfig.host"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.host</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConfig.password"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.password</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConfig.port"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.port</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConfig.user"><code class="docutils literal notranslate"><span class="pre">PostgresConfig.user</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#core.postgresql_connector.PostgresConnector.connect"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.connect()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#core.postgresql_connector.PostgresConnector.disconnect"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.disconnect()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#core.postgresql_connector.PostgresConnector.execute_query"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.execute_query()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConnector.connect"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.connect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConnector.disconnect"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.disconnect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipable.core.postgresql_connector.PostgresConnector.execute_query"><code class="docutils literal notranslate"><span class="pre">PostgresConnector.execute_query()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="llm_client_pipllm.html"><code class="docutils literal notranslate"><span class="pre">PipLlmApiClient</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipllm_api_client.html"><code class="docutils literal notranslate"><span class="pre">PipLlmApiClient</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="logger.html"><code class="docutils literal notranslate"><span class="pre">dev_logger()</span></code></a></li>
 </ul>
 
@@ -180,8 +199,8 @@ a Pandas DataFrame.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="pipable.html" title="previous chapter">&lt;no title&gt;</a></li>
-      <li>Next: <a href="llm_client_pipllm.html" title="next chapter">&lt;no title&gt;</a></li>
+      <li>Previous: <a href="llm_api_client_interface.html" title="previous chapter">&lt;no title&gt;</a></li>
+      <li>Next: <a href="pipllm_api_client.html" title="next chapter">&lt;no title&gt;</a></li>
   </ul></li>
 </ul>
 </div>
