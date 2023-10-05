@@ -38,15 +38,18 @@
 <p>Pipable simplifies the process of connecting to a remote PostgreSQL server, generating SQL queries using a language model, and executing them. This section provides a step-by-step guide on how to use Pipable effectively in your Python projects.</p>
 <ol class="arabic">
 <li><p><strong>Import Pipable:</strong></p>
-<p>To start using Pipable, import the necessary classes and interfaces:</p>
+<blockquote>
+<div><p>To start using Pipable, import the necessary classes and interfaces:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pipable</span> <span class="kn">import</span> <span class="n">Pipable</span>
 <span class="kn">from</span> <span class="nn">pipable.llm_client.pipllm</span> <span class="kn">import</span> <span class="n">PipLlmApiClient</span>
 <span class="kn">from</span> <span class="nn">pipable.core.postgresql_connector</span> <span class="kn">import</span> <span class="n">PostgresConfig</span><span class="p">,</span> <span class="n">PostgresConnector</span>
 </pre></div>
 </div>
+</div></blockquote>
 </li>
 <li><p><strong>Initialize Pipable:</strong></p>
-<p>Create an instance of Pipable by providing the required database configuration and LLM API base URL:</p>
+<blockquote>
+<div><p>Create an instance of Pipable by providing the required database configuration and LLM API base URL:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define PostgreSQL configuration</span>
 <span class="n">postgres_config</span> <span class="o">=</span> <span class="n">PostgresConfig</span><span class="p">(</span>
     <span class="n">host</span><span class="o">=</span><span class="s2">&quot;your_postgres_host&quot;</span><span class="p">,</span>
@@ -64,9 +67,11 @@
 <span class="n">pipable_instance</span> <span class="o">=</span> <span class="n">Pipable</span><span class="p">(</span><span class="n">database_connector</span><span class="o">=</span><span class="n">database_connector</span><span class="p">,</span> <span class="n">llm_api_client</span><span class="o">=</span><span class="n">llm_api_client</span><span class="p">)</span>
 </pre></div>
 </div>
+</div></blockquote>
 </li>
 <li><p><strong>Generate and Execute Queries:</strong></p>
-<p>Generate SQL queries using the language model and execute them on the database:</p>
+<blockquote>
+<div><p>Generate SQL queries using the language model and execute them on the database:</p>
 <ul class="simple">
 <li><p>When <cite>table_names</cite> is an empty list:</p></li>
 </ul>
@@ -75,7 +80,7 @@
 <span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;List all employees.&quot;</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># Generate and execute the query</span>
-    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pipable_instance</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">table_names</span><span class="p">)</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pipable_instance</span><span class="o">.</span><span class="n">ask_and_execute</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">table_names</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Query Result:&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result_df</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -90,7 +95,7 @@
 <span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;List all employees.&quot;</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># Generate and execute the query</span>
-    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pipable_instance</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pipable_instance</span><span class="o">.</span><span class="n">ask_and_execute</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Query Result:&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result_df</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -100,22 +105,35 @@
 <ul class="simple">
 <li><p>When <cite>table_names</cite> is populated with correct table names:</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a query using the language model</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate and Execute a query using the language model</span>
 <span class="n">table_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;table1&quot;</span><span class="p">,</span> <span class="s2">&quot;table2&quot;</span><span class="p">,</span> <span class="s2">&quot;table3&quot;</span><span class="p">]</span>
 <span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;List all employees.&quot;</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># Generate and execute the query</span>
-    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pipable_instance</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">table_names</span><span class="p">)</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pipable_instance</span><span class="o">.</span><span class="n">ask_and_execute</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">table_names</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Query Result:&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result_df</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Generate a query using the language model</span>
+<span class="n">table_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;table1&quot;</span><span class="p">,</span> <span class="s2">&quot;table2&quot;</span><span class="p">,</span> <span class="s2">&quot;table3&quot;</span><span class="p">]</span>
+<span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;List all employees.&quot;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Generate and execute the query</span>
+    <span class="n">result_query</span> <span class="o">=</span> <span class="n">pipable_instance</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">table_names</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Query Result:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result_query</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div></blockquote>
 <p>Handle exceptions appropriately to ensure graceful error handling in your application.</p>
 </li>
 <li><p><strong>Disconnect from the Database:</strong></p>
-<p>Close the connection to the PostgreSQL server after executing the queries:</p>
+<blockquote>
+<div><p>Close the connection to the PostgreSQL server after executing the queries:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pipable_instance</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -124,11 +142,14 @@
 </pre></div>
 </div>
 <p>Ensure that you disconnect from the database to release resources when the queries are completed.</p>
+</div></blockquote>
 </li>
 <li><p><strong>Additional Information:</strong></p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p>Check the interfaces: <cite>DatabaseConnectorInterface</cite> and <cite>LlmApiClientInterface</cite> for more details on the methods and functionalities provided by Pipable.</p></li>
 </ul>
+</div></blockquote>
 </li>
 </ol>
 <p>This guide outlines the fundamental steps for using Pipable to interact with a PostgreSQL database. Be sure to customize the error handling and query generation logic based on your specific use case to create a robust and reliable application.</p>
