@@ -35,21 +35,21 @@
             
   <section id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h1>
-<p>Pipable simplifies the process of connecting to a remote PostgreSQL server, generating SQL queries using a language model, and executing them. This section provides a step-by-step guide on how to use Pipable effectively in your Python projects.</p>
+<p>Pipable simplifies the process of connecting to a remote database server, generating database queries using a language model, and executing them. This section provides a step-by-step guide on how to use PipableAI effectively in your Python projects.</p>
 <ol class="arabic">
 <li><p><strong>Import Pipable:</strong></p>
 <blockquote>
-<div><p>To start using Pipable, import the necessary classes and interfaces:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pipable</span> <span class="kn">import</span> <span class="n">Pipable</span>
-<span class="kn">from</span> <span class="nn">pipable.llm_client.pipllm</span> <span class="kn">import</span> <span class="n">PipLlmApiClient</span>
-<span class="kn">from</span> <span class="nn">pipable.core.postgresql_connector</span> <span class="kn">import</span> <span class="n">PostgresConfig</span><span class="p">,</span> <span class="n">PostgresConnector</span>
+<div><p>To start using PipableAI, import the necessary classes and interfaces:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pipableai</span> <span class="kn">import</span> <span class="n">Pipable</span>
+<span class="kn">from</span> <span class="nn">pipableai.llm_client.pipllm</span> <span class="kn">import</span> <span class="n">PipLlmApiClient</span>
+<span class="kn">from</span> <span class="nn">pipableai.core.postgresql_connector</span> <span class="kn">import</span> <span class="n">PostgresConfig</span><span class="p">,</span> <span class="n">PostgresConnector</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p><strong>Initialize Pipable:</strong></p>
 <blockquote>
-<div><p>Create an instance of Pipable by providing the required database configuration and LLM API base URL:</p>
+<div><p>Create an instance of Pipable by providing the required database configuration and PipLLM API base URL:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define PostgreSQL configuration</span>
 <span class="n">postgres_config</span> <span class="o">=</span> <span class="n">PostgresConfig</span><span class="p">(</span>
     <span class="n">host</span><span class="o">=</span><span class="s2">&quot;your_postgres_host&quot;</span><span class="p">,</span>
@@ -181,9 +181,8 @@
 <li class="toctree-l1"><a class="reference internal" href="database_connector_interface.html"><code class="docutils literal notranslate"><span class="pre">DatabaseConnectorInterface</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="llm_api_client_interface.html"><code class="docutils literal notranslate"><span class="pre">LlmApiClientInterface</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html"><code class="docutils literal notranslate"><span class="pre">PostgresConfig</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html#pipable.core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html#pipableai.core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipllm_api_client.html"><code class="docutils literal notranslate"><span class="pre">PipLlmApiClient</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="logger.html"><code class="docutils literal notranslate"><span class="pre">dev_logger()</span></code></a></li>
 </ul>
 
 <div class="relations">

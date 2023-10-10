@@ -33,9 +33,9 @@
 
           <div class="body" role="main">
             
-  <dl class="py class" id="module-pipable.pipable">
-<span id="pipable-py"></span><dt class="sig sig-object py" id="pipable.pipable.Pipable">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pipable.pipable.</span></span><span class="sig-name descname"><span class="pre">Pipable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_connector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="database_connector_interface.html#pipable.interfaces.database_connector_interface.DatabaseConnectorInterface" title="pipable.interfaces.database_connector_interface.DatabaseConnectorInterface"><span class="pre">DatabaseConnectorInterface</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm_api_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="llm_api_client_interface.html#pipable.interfaces.llm_api_client_interface.LlmApiClientInterface" title="pipable.interfaces.llm_api_client_interface.LlmApiClientInterface"><span class="pre">LlmApiClientInterface</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pipable.pipable.Pipable" title="Link to this definition"></a></dt>
+  <dl class="py class" id="module-pipableai.pipable">
+<span id="pipable-py"></span><dt class="sig sig-object py" id="pipableai.pipable.Pipable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pipableai.pipable.</span></span><span class="sig-name descname"><span class="pre">Pipable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_connector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="database_connector_interface.html#pipableai.interfaces.database_connector_interface.DatabaseConnectorInterface" title="pipableai.interfaces.database_connector_interface.DatabaseConnectorInterface"><span class="pre">DatabaseConnectorInterface</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm_api_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="llm_api_client_interface.html#pipableai.interfaces.llm_api_client_interface.LlmApiClientInterface" title="pipableai.interfaces.llm_api_client_interface.LlmApiClientInterface"><span class="pre">LlmApiClientInterface</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pipableai.pipable.Pipable" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A Python package for connecting to a remote PostgreSQL server, generating and executing natural language-based data search queries mapped to SQL queries using the pipLLM.</p>
 <p>This module provides classes and functions for connecting to a PostgreSQL database and using a language model to generate SQL queries.</p>
@@ -49,8 +49,8 @@ all_table_queries (list): A list to store CREATE TABLE queries for all tables in
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pipable.pipable.Pipable.ask">
-<span class="sig-name descname"><span class="pre">ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pipable.pipable.Pipable.ask" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipableai.pipable.Pipable.ask">
+<span class="sig-name descname"><span class="pre">ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pipableai.pipable.Pipable.ask" title="Link to this definition"></a></dt>
 <dd><p>Generate an SQL query.</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>table_names (list, optional): The list of table names for the query context.
@@ -65,8 +65,8 @@ question (str): The query to perform in simple English.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pipable.pipable.Pipable.ask_and_execute">
-<span class="sig-name descname"><span class="pre">ask_and_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#pipable.pipable.Pipable.ask_and_execute" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipableai.pipable.Pipable.ask_and_execute">
+<span class="sig-name descname"><span class="pre">ask_and_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#pipableai.pipable.Pipable.ask_and_execute" title="Link to this definition"></a></dt>
 <dd><p>Generate an SQL query and execute it on the PostgreSQL server.</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>table_names (list, optional): The list of table names for the query context.
@@ -81,8 +81,8 @@ question (str): The query to perform in simple English.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pipable.pipable.Pipable.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipable.pipable.Pipable.connect" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipableai.pipable.Pipable.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipableai.pipable.Pipable.connect" title="Link to this definition"></a></dt>
 <dd><p>Establish a connection to the Database server.</p>
 <p>This method establishes a connection to the remote PostgreSQL server using the provided database connector.</p>
 <dl class="simple">
@@ -92,8 +92,8 @@ question (str): The query to perform in simple English.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pipable.pipable.Pipable.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipable.pipable.Pipable.disconnect" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipableai.pipable.Pipable.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipableai.pipable.Pipable.disconnect" title="Link to this definition"></a></dt>
 <dd><p>Close the connection to the Database server.</p>
 <p>This method closes the connection to the remote PostgreSQL server.</p>
 </dd></dl>
@@ -123,18 +123,17 @@ question (str): The query to perform in simple English.</p>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Pipable</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#pipable.pipable.Pipable.ask"><code class="docutils literal notranslate"><span class="pre">Pipable.ask()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pipable.pipable.Pipable.ask_and_execute"><code class="docutils literal notranslate"><span class="pre">Pipable.ask_and_execute()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pipable.pipable.Pipable.connect"><code class="docutils literal notranslate"><span class="pre">Pipable.connect()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pipable.pipable.Pipable.disconnect"><code class="docutils literal notranslate"><span class="pre">Pipable.disconnect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipableai.pipable.Pipable.ask"><code class="docutils literal notranslate"><span class="pre">Pipable.ask()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipableai.pipable.Pipable.ask_and_execute"><code class="docutils literal notranslate"><span class="pre">Pipable.ask_and_execute()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipableai.pipable.Pipable.connect"><code class="docutils literal notranslate"><span class="pre">Pipable.connect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipableai.pipable.Pipable.disconnect"><code class="docutils literal notranslate"><span class="pre">Pipable.disconnect()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database_connector_interface.html"><code class="docutils literal notranslate"><span class="pre">DatabaseConnectorInterface</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="llm_api_client_interface.html"><code class="docutils literal notranslate"><span class="pre">LlmApiClientInterface</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html"><code class="docutils literal notranslate"><span class="pre">PostgresConfig</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html#pipable.core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html#pipableai.core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipllm_api_client.html"><code class="docutils literal notranslate"><span class="pre">PipLlmApiClient</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="logger.html"><code class="docutils literal notranslate"><span class="pre">dev_logger()</span></code></a></li>
 </ul>
 
 <div class="relations">

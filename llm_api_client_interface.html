@@ -33,9 +33,9 @@
 
           <div class="body" role="main">
             
-  <dl class="py class" id="module-pipable.interfaces.llm_api_client_interface">
-<span id="llm-api-client-interface-py"></span><dt class="sig sig-object py" id="pipable.interfaces.llm_api_client_interface.LlmApiClientInterface">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pipable.interfaces.llm_api_client_interface.</span></span><span class="sig-name descname"><span class="pre">LlmApiClientInterface</span></span><a class="headerlink" href="#pipable.interfaces.llm_api_client_interface.LlmApiClientInterface" title="Link to this definition"></a></dt>
+  <dl class="py class" id="module-pipableai.interfaces.llm_api_client_interface">
+<span id="llm-api-client-interface-py"></span><dt class="sig sig-object py" id="pipableai.interfaces.llm_api_client_interface.LlmApiClientInterface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pipableai.interfaces.llm_api_client_interface.</span></span><span class="sig-name descname"><span class="pre">LlmApiClientInterface</span></span><a class="headerlink" href="#pipableai.interfaces.llm_api_client_interface.LlmApiClientInterface" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
 <p>Abstract base class for Language Model API client interfaces.</p>
 <p>This class defines the interface for interacting with a Language Model API.
@@ -64,8 +64,8 @@ for the abstract methods.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pipable.interfaces.llm_api_client_interface.LlmApiClientInterface.generate_text">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pipable.interfaces.llm_api_client_interface.LlmApiClientInterface.generate_text" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pipableai.interfaces.llm_api_client_interface.LlmApiClientInterface.generate_text">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pipableai.interfaces.llm_api_client_interface.LlmApiClientInterface.generate_text" title="Link to this definition"></a></dt>
 <dd><p>Generate text based on the given context and question.</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>context (str): The context for text generation.
@@ -103,13 +103,12 @@ question (str): The question to be answered in the generated text.</p>
 <li class="toctree-l1"><a class="reference internal" href="pipable.html"><code class="docutils literal notranslate"><span class="pre">Pipable</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="database_connector_interface.html"><code class="docutils literal notranslate"><span class="pre">DatabaseConnectorInterface</span></code></a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">LlmApiClientInterface</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#pipable.interfaces.llm_api_client_interface.LlmApiClientInterface.generate_text"><code class="docutils literal notranslate"><span class="pre">LlmApiClientInterface.generate_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipableai.interfaces.llm_api_client_interface.LlmApiClientInterface.generate_text"><code class="docutils literal notranslate"><span class="pre">LlmApiClientInterface.generate_text()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html"><code class="docutils literal notranslate"><span class="pre">PostgresConfig</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html#pipable.core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgresql_connector.html#pipableai.core.postgresql_connector.PostgresConnector"><code class="docutils literal notranslate"><span class="pre">PostgresConnector</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipllm_api_client.html"><code class="docutils literal notranslate"><span class="pre">PipLlmApiClient</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="logger.html"><code class="docutils literal notranslate"><span class="pre">dev_logger()</span></code></a></li>
 </ul>
 
 <div class="relations">
